@@ -1,0 +1,79 @@
+import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
+const LuxuryEventApp = () => {
+  return (
+    <div className="min-h-screen bg-black text-gold p-4">
+      <header className="text-center py-6">
+        <h1 className="text-4xl font-bold">極樂世界</h1>
+        <p className="text-lg">專屬奢華活動體驗</p>
+      </header>
+
+      {/* Tabs for Navigation */}
+      <Tabs defaultValue="home" className="mt-6">
+        <TabsList className="flex justify-center gap-4">
+          <TabsTrigger value="home">首頁</TabsTrigger>
+          <TabsTrigger value="events">活動報名</TabsTrigger>
+          <TabsTrigger value="points">集點系統</TabsTrigger>
+          <TabsTrigger value="gallery">相簿牆</TabsTrigger>
+          <TabsTrigger value="profile">會員中心</TabsTrigger>
+        </TabsList>
+
+        {/* Home Tab */}
+        <Card className="mt-6 bg-gold/10 border-gold">
+          <CardContent>
+            <h2 className="text-2xl font-semibold">最新公告</h2>
+            <p className="mt-2">即將舉辦的奢華活動，名額有限，敬請把握！</p>
+          </CardContent>
+        </Card>
+
+        {/* Event Registration Tab */}
+        <Card className="mt-6 bg-gold/10 border-gold">
+          <CardContent>
+            <h2 className="text-2xl font-semibold">活動報名</h2>
+            <p className="mt-2">選擇您想參加的活動並報名：</p>
+            <Button className="mt-4 w-full bg-gold text-black">立即報名</Button>
+          </CardContent>
+        </Card>
+
+        {/* Points System Tab */}
+        <Card className="mt-6 bg-gold/10 border-gold">
+          <CardContent>
+            <h2 className="text-2xl font-semibold">您的點數</h2>
+            <p className="mt-2 text-4xl">1200</p>
+            <p className="mt-2">參與次數：8 次</p>
+            <Button className="mt-4 w-full bg-gold text-black">兌換獎勵</Button>
+          </CardContent>
+        </Card>
+
+        {/* Gallery Tab */}
+        <Card className="mt-6 bg-gold/10 border-gold">
+          <CardContent>
+            <h2 className="text-2xl font-semibold">活動相簿</h2>
+            <p className="mt-2">回顧精彩瞬間：</p>
+            <div className="grid grid-cols-3 gap-2 mt-4">
+              <div className="h-24 bg-gold/20"></div>
+              <div className="h-24 bg-gold/20"></div>
+              <div className="h-24 bg-gold/20"></div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Profile Tab */}
+        <Card className="mt-6 bg-gold/10 border-gold">
+          <CardContent>
+            <h2 className="text-2xl font-semibold">會員中心</h2>
+            <Input placeholder="姓名" className="mt-2 bg-black border-gold text-gold" />
+            <Input placeholder="電子郵件" className="mt-2 bg-black border-gold text-gold" />
+            <Button className="mt-4 w-full bg-gold text-black">更新資料</Button>
+          </CardContent>
+        </Card>
+      </Tabs>
+    </div>
+  );
+};
+
+export default LuxuryEventApp;
